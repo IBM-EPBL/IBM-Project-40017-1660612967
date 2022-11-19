@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify, render_template, url_for, request
+from flask import Flask, request, jsonify, render_template, url_for , request
 import pickle
 app = Flask(__name__)
 model = pickle.load(open('flightclf.pkl', 'rb'))
@@ -49,5 +49,3 @@ def predict():
     else:
         ans = "the flight will be delayed"
     return render_template("index.html", showcase=ans)
-if __name__== '__main__':
-    app.run(debug=False)
